@@ -1,0 +1,153 @@
+{
+  "header": {
+    "title": "Shah Fahad",
+    "subtitle": "Full Stack Developer specializing in MERN stack",
+    "description": " I solve tangible problems through the intangible art of coding, framing solutions on the screens of digital devices."
+  },
+  "navigation": ["about", "experience", "projects", "certification"],
+  "socials": [
+    {
+      "title": "GitHub",
+      "link": "https://github.com/ShahandFahad",
+      "label": "GitHub (opens in a new tab)",
+      "icon": "github"
+    },
+    {
+      "title": "LinkedIn",
+      "link": "https://github.com/ShahandFahad",
+      "label": "LinkedIn (opens in a new tab)",
+      "icon": "linkedin"
+    },
+    {
+      "title": "CodePen",
+      "link": "https://github.com/ShahandFahad",
+      "label": "CodePen (opens in a new tab)",
+      "icon": "codepen"
+    },
+    {
+      "title": "Instagram",
+      "link": "https://github.com/ShahandFahad",
+      "label": "Instagram (opens in a new tab)",
+      "icon": "instagram"
+    },
+    {
+      "title": "Twitter",
+      "link": "https://github.com/ShahandFahad",
+      "label": "Twitter (opens in a new tab)",
+      "icon": "twitter"
+    }
+  ],
+  "sections": {
+    "about": {
+      "title": "About Me",
+      "description": [
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam nulla ex consectetur repudiandae omnis earum inventore, eos quia cumque, vitae quas ea possimus dicta modi consequuntur quam illum natus maximedolorum tempore labore.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam nulla ex consectetur repudiandae omnis earum inventore.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam."
+      ]
+    },
+    "workexperience": {
+      "title": "Experience",
+      "experience": [
+        {
+          "duration": "2024 — Present",
+          "title": "Junior MERN Stack Developer",
+          "place": "Self",
+          "icon": "uparrow.svg",
+          "description": "Working on MERN Stack for like a 1.5 years and developed pretty much fullstack application for local clients. Worked collaborately with clients and implemented best practices.",
+          "technologies": ["JavaScript", "React", "Node.js", "MongoDB"]
+        },
+        {
+          "duration": "2022 — 2023",
+          "title": "WAMP",
+          "place": "YMS",
+          "icon": "uparrow.svg",
+          "description": "Developed an ecommerce for local clients. Maintained the project for a year.",
+          "technologies": ["PHP", "JavaScript", "MySql", "Bootstrap"]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "project": [
+        {
+          "title": " Solar Scape",
+          "type": "Web App",
+          "icon": "uparrow.svg",
+          "description": "Developed a Solar potential assessment app using MERN stack and Google Earth Engine. Connected Solar database from NREL.",
+          "technologies": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS",
+            "Earth Engine"
+          ],
+          "image": "projectimage.jpeg"
+        },
+        {
+          "title": "MIS",
+          "type": "Web App",
+          "icon": "uparrow.svg",
+          "description": "Developed an MIS system for electronic business. Used React for the frontend, Node.js for the backend and for demand forecasting setup a Flask server using apriori algorithm",
+          "technologies": [
+            "JavaScript",
+            "Python",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS",
+            "Flask"
+          ],
+          "image": "projectimage.jpeg"
+        }
+      ]
+    },
+    "certification": {
+      "title": "Certification",
+      "field": [
+        {
+          "title": "Meta Frontend Developer",
+          "from": "Meta",
+          "date": "2023",
+          "link": "https://github.com/ShahandFahad",
+          "image": "certificateimage.png"
+        },
+        {
+          "title": "Meta Backend Developer",
+          "from": "Meta",
+          "date": "2023",
+          "link": "https://github.com/ShahandFahad",
+          "image": "certificateimage.png"
+        },
+        {
+          "title": "IBM Fullstack Developer",
+          "from": "IBM",
+          "date": "2024",
+          "link": "https://github.com/ShahandFahad",
+          "image": "certificateimage.png"
+        },
+        {
+          "title": "Google IT Automation in Python",
+          "from": "Google",
+          "date": "2022",
+          "link": "https://github.com/ShahandFahad",
+          "image": "certificateimage.png"
+        }
+      ]
+    },
+    "otherlinks": {
+      "resume": {
+        "title": "View Résumé",
+        "icon": "uparrow.svg",
+        "link": "resume.pdf"
+      },
+      "gitprojects": {
+        "title": "View Projects on GitHub",
+        "icon": "uparrow.svg",
+        "link": "https://github.com/ShahandFahad"
+      }
+    }
+  },
+  "footer": "Built puerly in React and Tailwind CSS. Deployed with Vercel"
+}
