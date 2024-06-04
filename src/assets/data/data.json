@@ -2,7 +2,7 @@
   "header": {
     "title": "Shah Fahad",
     "subtitle": "Full Stack Developer specializing in MERN stack",
-    "description": " I solve tangible problems through the intangible art of coding, framing solutions on the screens of digital devices."
+    "description": "I solve tangible problems through the intangible art of coding, framing solutions on the screens of digital devices."
   },
   "navigation": ["about", "experience", "projects", "certification"],
   "socials": [
@@ -39,57 +39,64 @@
   ],
   "sections": {
     "about": {
+      "id": "about",
       "title": "About Me",
       "description": [
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam nulla ex consectetur repudiandae omnis earum inventore, eos quia cumque, vitae quas ea possimus dicta modi consequuntur quam illum natus maximedolorum tempore labore.",
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam nulla ex consectetur repudiandae omnis earum inventore.",
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Autem eni ipsum ipsam."
+        "It all started back in 2021, where I was confused, which major to take. Then suddenly there comes the thought that It would be very cool setting all day on computer among the no IT people. Back then I started to learn about coding and software enviroments. Completing a journey to this point including, developing mutliple software for different clients. Such as Software for Electronic Business, a Ecommerce Startup and my FYP",
+        "My main focus these days, include developing fullstack application, using MERN stack. Where I go through all the process of professional software development practices to meet the client requirements.",
+        "I mostly spend my time infornt of an emotionless piece of machine called computer. And when I am not using it. I enjoy silently sitting in nature."
       ]
     },
     "workexperience": {
+      "id": "experience",
       "title": "Experience",
       "experience": [
         {
           "duration": "2024 — Present",
-          "title": "Junior MERN Stack Developer",
+          "title": "MERN Stack Developer · ",
+          "link": "https://github.com/ShahandFahad",
           "place": "Self",
-          "icon": "uparrow.svg",
-          "description": "Working on MERN Stack for like a 1.5 years and developed pretty much fullstack application for local clients. Worked collaborately with clients and implemented best practices.",
+          "icon": "uparrow",
+          "description": "MERN stack developer. Developing fullstack applications including the forntend in React and using Node.js for the backend.",
           "technologies": ["JavaScript", "React", "Node.js", "MongoDB"]
         },
         {
           "duration": "2022 — 2023",
-          "title": "WAMP",
+          "title": "WAMP · ",
+          "link": "https://github.com/ShahandFahad",
           "place": "YMS",
-          "icon": "uparrow.svg",
-          "description": "Developed an ecommerce for local clients. Maintained the project for a year.",
+          "icon": "uparrow",
+          "description": "Developed an ecommerce web site. Maintained it for a year.",
           "technologies": ["PHP", "JavaScript", "MySql", "Bootstrap"]
         }
       ]
     },
     "projects": {
+      "id": "projects",
       "title": "Projects",
       "project": [
         {
           "title": " Solar Scape",
           "type": "Web App",
-          "icon": "uparrow.svg",
-          "description": "Developed a Solar potential assessment app using MERN stack and Google Earth Engine. Connected Solar database from NREL.",
+          "link": "https://github.com/ShahandFahad",
+          "icon": "uparrow",
+          "description": "Developed a comprehensive web application for assessing solar potential. Features include user management and an admin dashboard. Implemented a microservices architecture using Node.js. This project is expected to significantly optimize solar energy utilization.",
           "technologies": [
             "JavaScript",
             "React",
             "Node.js",
             "MongoDB",
             "Tailwind CSS",
-            "Earth Engine"
+            "Google Earth Engine"
           ],
-          "image": "projectimage.jpeg"
+          "image": "solarscape"
         },
         {
-          "title": "MIS",
+          "title": "MIS for Electronic Business",
           "type": "Web App",
-          "icon": "uparrow.svg",
-          "description": "Developed an MIS system for electronic business. Used React for the frontend, Node.js for the backend and for demand forecasting setup a Flask server using apriori algorithm",
+          "link": "https://github.com/ShahandFahad",
+          "icon": "uparrow",
+          "description": "Engineered a full-stack web application for managing electronic business operations.  Enhanced business efficiency by integrating advanced functionalities like sales and purchase management, demand forecasting, and financial reporting. Implemented using  React, Node.js, and Flask for microservices.",
           "technologies": [
             "JavaScript",
             "Python",
@@ -99,53 +106,76 @@
             "Tailwind CSS",
             "Flask"
           ],
-          "image": "projectimage.jpeg"
+          "image": "mis"
+        },
+        {
+          "title": "3BS . Old Item Market Place",
+          "type": "Web App",
+          "link": "https://github.com/ShahandFahad",
+          "icon": "uparrow",
+          "description": "Developed a marketplace platform using the MERN stack for buying, selling, renting, and bidding on items. Customized user interfaces using React and Tailwind CSS, with backend operations handled by Node.js and media storage through Firebase",
+          "technologies": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Firebase",
+            "Tailwind CSS"
+          ],
+          "image": "bs"
         }
       ]
     },
     "certification": {
+      "id": "certification",
       "title": "Certification",
       "field": [
         {
-          "title": "Meta Frontend Developer",
+          "title": "Meta Front-End Developer",
           "from": "Meta",
           "date": "2023",
-          "link": "https://github.com/ShahandFahad",
-          "image": "certificateimage.png"
+          "link": "https://github.com/ShahandFahad/Meta-Front-End-Developer.git",
+          "image": "metaf",
+          "icon": "uparrow"
         },
         {
-          "title": "Meta Backend Developer",
+          "title": "Meta Back-End Developer",
           "from": "Meta",
           "date": "2023",
-          "link": "https://github.com/ShahandFahad",
-          "image": "certificateimage.png"
+          "link": "https://github.com/ShahandFahad/Meta-Back-End-Developer.git",
+          "image": "metab",
+          "icon": "uparrow"
         },
         {
-          "title": "IBM Fullstack Developer",
+          "title": "IBM-full-stack-software-developer",
           "from": "IBM",
           "date": "2024",
-          "link": "https://github.com/ShahandFahad",
-          "image": "certificateimage.png"
+          "link": "https://github.com/ShahandFahad/IBM-full-stack-software-developer.git",
+          "image": "ibm",
+          "icon": "uparrow"
         },
         {
-          "title": "Google IT Automation in Python",
+          "title": "Google IT Automation With Python",
           "from": "Google",
           "date": "2022",
-          "link": "https://github.com/ShahandFahad",
-          "image": "certificateimage.png"
+          "link": "https://github.com/ShahandFahad/Google-IT-Automation-with-Python.git",
+          "image": "gitautomation",
+          "icon": "uparrow"
         }
       ]
     },
     "otherlinks": {
       "resume": {
         "title": "View Résumé",
-        "icon": "uparrow.svg",
-        "link": "resume.pdf"
+        "icon": "uparrow",
+        "link": "resume.pdf",
+        "label": "View Full Résumé (opens in a new tab)"
       },
       "gitprojects": {
         "title": "View Projects on GitHub",
-        "icon": "uparrow.svg",
-        "link": "https://github.com/ShahandFahad"
+        "icon": "uparrow",
+        "link": "https://github.com/ShahandFahad",
+        "label": "View Full Project on Github (Opens new tab)"
       }
     }
   },
