@@ -1,10 +1,11 @@
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import DataProvider from "./provider/DataProvider";
+import "./App.css";
 
 function App() {
   return (
     <DataProvider>
-      <Home />
+      <HomePage />
     </DataProvider>
   );
 }
