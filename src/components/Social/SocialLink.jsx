@@ -4,9 +4,9 @@ import { icons } from "../../assets/icons/icons";
  * Socials Icons with links
  * @returns Socila Link Icon
  */
-export default function SocialLink({ title, link, label, icon, index }) {
+export default function SocialLink({ title, link, label, icon }) {
   return (
-    <li className="mr-5 text-xs shrink-0" key={index}>
+    <li className="mr-5 text-xs shrink-0">
       <a
         className="block hover:text-gray-200"
         href={`${link}`}

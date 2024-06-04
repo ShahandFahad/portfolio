@@ -16,7 +16,7 @@ export default function Navbar() {
       <ul className="mt-16 w-max">
         {/* Iterate over nav list */}
         {navigation.map((name, index) => (
-          <Navlink name={name} index={index} />
+          <Navlink name={name} key={index} />
         ))}
       </ul>
     </nav>

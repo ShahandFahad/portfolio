@@ -3,9 +3,9 @@ import React from "react";
  *
  * @returns Nav link with small line follwed by link name
  */
-export default function Navlink({ name, index }) {
+export default function Navlink({ name }) {
   return (
-    <li key={index}>
+    <li>
       {/* Navlink */}
       <a className="group flex items-center py-3 active" href={`#${name}`}>
         {/* Nav Indicator: A small thin line */}

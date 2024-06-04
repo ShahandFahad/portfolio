@@ -17,6 +17,7 @@ export default function Social() {
           label={social.label}
           icon={social.icon}
           index={index}
+          key={index}
         />
       ))}
     </ul>

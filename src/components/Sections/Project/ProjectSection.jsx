@@ -19,8 +19,8 @@ export default function ProjectSection() {
     <SectionLayout id={projects.id} title={projects.title}>
       {/* List of project cards */}
       <ol className="group/list">
-        {projects.project.map((proj) => (
-          <li className="mb-12">
+        {projects.project.map((proj, index) => (
+          <li className="mb-12" key={index}>
             <CardLayout hasImage={true}>
               <Body haseImage={true}>
                 <Title
