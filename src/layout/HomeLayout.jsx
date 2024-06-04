@@ -6,7 +6,7 @@ import React from "react";
  * @param {*} any
  * @returns Home page of the application
  */
-export default function MainLayout({ children }) {
+export default function HomeLayout({ children }) {
   return (
     <div className="bg-gray-950 leading-relaxed text-gray-400 antialised selection:bg-cyan-900 selecton:text-cyan-300">
       <div id="content">
