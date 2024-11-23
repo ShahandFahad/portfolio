@@ -1,9 +1,10 @@
 import React from "react";
+type PropTypes = { name: string };
 /**
  *
  * @returns Nav link with small line follwed by link name
  */
-export default function Navlink({ name }) {
+export default function Navlink({ name }: PropTypes) {
   return (
     <li>
       {/* Navlink */}

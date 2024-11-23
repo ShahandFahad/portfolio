@@ -1,4 +1,16 @@
-export const icons = {
+import React from "react";
+
+type IconType = {
+  codepen: React.JSX.Element;
+  github: React.JSX.Element;
+  instagram: React.JSX.Element;
+  linkedin: React.JSX.Element;
+  twitter: React.JSX.Element;
+  uparrow: React.JSX.Element;
+  [key: string]: React.JSX.Element; // allow to access elements via string key type
+};
+
+export const icons: IconType = {
   codepen: (
     <svg
       xmlns="http://www.w3.org/2000/svg"

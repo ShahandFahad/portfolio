@@ -1,16 +1,20 @@
 import React from "react";
-
+type PropTypes = {
+  hasImage: boolean;
+  children: any;
+  certificateimage: boolean;
+};
 /**
  *
  * @returns Card Body
  */
 export default function Body({
-  haseImage = false,
+  hasImage = false,
   children,
   certificateimage = false,
-}) {
+}: PropTypes) {
   // Incase of image, add order on small screen
-  const order = haseImage ? "sm:order-2" : "";
+  const order = hasImage ? "sm:order-2" : "";
 
   // Incase of certificate section use this css
   const colspan = certificateimage ? "col-span-6" : "sm:col-span-6";

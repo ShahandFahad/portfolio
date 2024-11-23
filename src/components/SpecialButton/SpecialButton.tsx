@@ -1,10 +1,11 @@
 import React from "react";
 import { icons } from "../../assets/icons/icons";
+type PropTypes = { title: string; icon: string; path: string; label: string };
 /**
  * This is a special link. Used incase of providing a visiting link to specific document, webpage etc
  * @returns a link
  */
-export default function SpecialButton({ title, icon, path, label }) {
+export default function SpecialButton({ title, icon, path, label }: PropTypes) {
   return (
     <div className="mt-12">
       <a

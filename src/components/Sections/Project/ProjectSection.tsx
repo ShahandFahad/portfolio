@@ -21,18 +21,19 @@ export default function ProjectSection() {
       <ol className="group/list">
         {projects.project.map((proj, index) => (
           <li className="mb-12" key={index}>
-            <CardLayout hasImage={true}>
-              <Body haseImage={true}>
+            <CardLayout hasImage={true} certificationSection={false}>
+              <Body hasImage={true} certificateimage={false}>
                 <Title
                   title={proj.title}
                   link={proj.link}
                   subtitle=""
                   icon={proj.icon}
+                  date=""
                 />
                 <Description description={proj.description} />
                 <StickerList technologies={proj.technologies} />
               </Body>
-              <Image image={proj.image} />
+              <Image image={proj.image} certificateimage={false} />
             </CardLayout>
           </li>
         ))}

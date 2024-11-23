@@ -1,7 +1,9 @@
 import React from "react";
 import { images } from "../../../assets/images/images";
 
-export default function Image({ image, certificateimage = false }) {
+type PropTypes = { image: string; certificateimage: boolean };
+
+export default function Image({ image, certificateimage = false }: PropTypes) {
   // for certificate image apply different css
   const imgcss = certificateimage
     ? "z-10 col-span-2 rounded border-2 border-gray-200/10 transition group-hover:border-gray-200/30 sm:col-span-2"

@@ -25,14 +25,15 @@ export default function ExperienceSection() {
       <ol className="group/list">
         {workexperience.experience.map((exp, index) => (
           <li className="mb-12" key={index}>
-            <CardLayout>
+            <CardLayout hasImage={false} certificationSection={false}>
               <CardHeader duration={exp.duration} />
-              <Body>
+              <Body hasImage={false} certificateimage={false}>
                 <Title
                   title={exp.title}
                   link={exp.link}
                   subtitle={exp.place}
                   icon={exp.icon}
+                  date=""
                 />
                 <Description description={exp.description} />
                 <StickerList technologies={exp.technologies} />

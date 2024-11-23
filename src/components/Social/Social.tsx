@@ -10,6 +10,7 @@ export default function Social() {
   const { socials } = useContext(DataContext); // Consume and Destructure Data
   return (
     <ul className="ml-1 mt-8 flex items-center " aria-label="Social Media">
+      {/* Iterate over socials */}
       {socials.map((social, index) => (
         <SocialLink
           title={social.title}

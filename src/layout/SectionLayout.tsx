@@ -1,10 +1,10 @@
 import React from "react";
-
+type PropTypes = { id: string; title: string; children: any };
 /**
  * It defines how, sections would behave in the main container
  * @returns Section Layout for Main content
  */
-export default function SectionLayout({ id, title, children }) {
+export default function SectionLayout({ id, title, children }: PropTypes) {
   return (
     <section
       id={id}

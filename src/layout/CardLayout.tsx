@@ -1,6 +1,10 @@
 import React from "react";
 import BgBlurEffect from "../components/BgBlurEffect/BgBlurEffect";
-
+type PropTypes = {
+  hasImage: boolean;
+  children: any;
+  certificationSection: boolean;
+};
 /**
  * @returns General card layout
  */
@@ -8,7 +12,7 @@ export default function CardLayout({
   hasImage = false,
   children,
   certificationSection = false,
-}) {
+}: PropTypes) {
   // Incase if the card has image then add gap
   const gap = hasImage ? "gap-4" : "";
 

@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../context/Context";
 /**
- * It is the hero section which introudct user
- *
+ * It is the hero section which introudce user
  * @returns Title, subtitle and Description of user
  */
 export default function Hero() {
@@ -19,7 +18,7 @@ export default function Hero() {
         {header.subtitle}
       </h2>
       {/* Description */}
-      <p className="mt-4 max-w-xs leading-normal">{header.desription}</p>
+      <p className="mt-4 max-w-xs leading-normal">{header.description}</p>
     </>
   );
 }

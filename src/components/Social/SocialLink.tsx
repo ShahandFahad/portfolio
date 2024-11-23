@@ -1,10 +1,19 @@
 import React from "react";
 import { icons } from "../../assets/icons/icons";
+
+type PropTypes = {
+  title: string;
+  link: string;
+  label: string;
+  icon: string;
+  index: number;
+};
+
 /**
  * Socials Icons with links
  * @returns Socila Link Icon
  */
-export default function SocialLink({ title, link, label, icon }) {
+export default function SocialLink({ title, link, label, icon }: PropTypes) {
   return (
     <li className="mr-5 text-xs shrink-0">
       <a

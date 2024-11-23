@@ -7,8 +7,20 @@ import metaf from "./metaf.png";
 import metab from "./metab.png";
 import gitautomation from "./gitautomation.png";
 
+type ImageTypes = {
+  project: string;
+  mis: string;
+  bs: string;
+  solarscape: string;
+  ibm: string;
+  metaf: string;
+  metab: string;
+  gitautomation: string;
+  [key: string]: string;
+};
+
 // Export Images
-export const images = {
+export const images: ImageTypes = {
   project,
   mis,
   bs,

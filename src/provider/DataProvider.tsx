@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import data from "../assets/data/data.json";
-import { DataContext } from "../context/Context";
+import { DataContext, AppDataContextType } from "../context/Context";
+
 /**
  * This is custom data provider for the app.
  * It reads data from json file, Stored in Services folder.
@@ -9,8 +10,8 @@ import { DataContext } from "../context/Context";
  * @param {*} any
  * @returns app wrapped with data
  */
-export default function DataProvider({ children }) {
-  const [appData, setAppData] = useState(data);
+export default function DataProvider({ children }: any) {
+  const [appData, setAppData] = useState<AppDataContextType>(data);
 
   // Run this effect on mount
   useEffect(() => {
