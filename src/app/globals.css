@@ -1,8 +1,12 @@
 @import "tailwindcss";
 /* @plugin "daisyui"; */
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, night;
+    themes: night --default, winter;
 };
+
+html {
+    scroll-behavior: smooth;
+}
 
 /*
 :root {
