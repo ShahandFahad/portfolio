@@ -37,6 +37,20 @@
       "icon": "twitter"
     }
   ],
+  "technicalSkills": {
+      "programmingSkills": ["JavaScript (ES6+)", "TypeScript", "C++", "Python", "Go", "SQL"],
+      "frontendDevelopment": ["React.js", "Next.js", "Redux", "HTML5", "CSS3", "Tailwind CSS", "Sass"],
+      "backendDevelopment": ["Node.js", "Express.js", "Golang", "Flask", "MongoDB", "PostgreSQL", "RESTful APIs"],
+      "toolsAndPlatform": ["Git", "GitHub", "Firebase", "Docker", "Postman"],
+      "testingAndDevOps": ["Jest", "CI/CD Pipelines (GitHub Actions)"]
+  },
+  "technicalSkillsSvgs": {
+      "programmingSkills": ["js.svg", "typescript.svg", "cpp.svg", "python.svg", "go.svg", "sql.svg"],
+      "frontendDevelopment": ["react.svg", "nextjs.svg", "redux.svg", "html.svg", "css.svg", "tailwindcss.svg", "sass.svg"],
+      "backendDevelopment": ["nodejs.svg", "express.svg", "go.svg", "flask.svg", "mongodb.svg", "postgres.svg", "rest.svg"],
+      "toolsAndPlatform": ["git.svg", "github.svg", "firebase.svg", "docker.svg", "postman.svg"],
+      "testingAndDevOps": ["jest.svg", "cicd.svg"]
+  },
   "sections": {
     "about": {
       "id": "about",
@@ -95,12 +109,12 @@
               "technologies": [
                   "React.js",
                   "Node.js",
+                  "JWT",
                   "Express.js",
                   "MongoDB",
-                  "Firebase",
-                  "JWT"
+                  "Firebase"
               ],
-              "image": "sceco"
+              "image": "sceco.PNG"
           },
           {
               "title": "MIS for Electronic Business",
@@ -111,13 +125,13 @@
               "technologies": [
                   "React.js",
                   "MUI",
-                  "Node.js",
-                  "Express.js",
                   "JWT",
                   "Flask",
+                  "Node.js",
+                  "Express.js",
                   "MongoDB"
               ],
-              "image": "mis"
+              "image": "mis.PNG"
           }, 
           {
               "title": "3BS | Marketplace for Used Items",
@@ -128,12 +142,12 @@
               "technologies": [
                   "React.js",
                   "Node.js",
+                  "JWT",
                   "Express.js",
                   "Firebase",
-                  "MongoDB",
-                  "JWT"
+                  "MongoDB"
               ],
-              "image": "bs"
+              "image": "3bs.PNG"
           },
           {
               "title": "Solar Scape",
@@ -144,15 +158,15 @@
               "technologies": [
                   "React.js",
                   "Node.js",
+                  "JWT",
                   "Firebase",
                   "MongoDB",
-                  "JWT",
                   "NREL API"
               ],
-              "image": "solarscape"
+              "image": "scape.PNG"
           },
           {
-              "title": "GoTree | CLI File and Directory Tree Viewer",
+              "title": "GoTree | File & Directory Tree Viewer",
               "type": "CLI Tool",
               "link": "https://github.com/ShahandFahad",
               "icon": "uparrow",
@@ -162,7 +176,7 @@
                   "os",
                   "filepath"
               ],
-              "image": "gotree"
+              "image": "gotree.png"
           }
       ]
     },
@@ -219,5 +233,5 @@
       }
     }
   },
-  "footer": "Built puerly in React and Tailwind CSS. Deployed with Vercel"
+  "footer": "Forged in Code & Honor ⚔️"
 }

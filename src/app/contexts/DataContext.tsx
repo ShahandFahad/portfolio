@@ -8,12 +8,21 @@ type Header = {
 };
 
 type Navigation = Array<string>;
+
 type Socials = Array<{
     title: string;
     link: string;
     label: string;
     icon: string;
 }>;
+
+type TechnicalSkills = {
+    programmingSkills: Array<string>;
+    frontendDevelopment: Array<string>;
+    backendDevelopment: Array<string>;
+    toolsAndPlatform: Array<string>;
+    testingAndDevOps: Array<string>;
+};
 
 type About = {
     id: string;
@@ -88,6 +97,8 @@ export interface DataContextType {
     header: Header;
     navigation: Navigation;
     socials: Socials;
+    technicalSkills: TechnicalSkills;
+    technicalSkillsSvgs: TechnicalSkills;
     sections: {
         about: About;
         workexperience: WorkExperience;
