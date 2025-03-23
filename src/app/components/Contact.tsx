@@ -105,7 +105,7 @@ export const Contact = () => {
                 <p className="font-bold">
                     Summon the Code Ronin
                     <br />
-                    Let's Talk, Send me an email. An I will reach out to you.
+                    Let&apos;s Talk, Send me an email. An I will reach out to you.
                 </p>
             </aside>
             <fieldset className="fieldset md:w-lg bg-base-200 border border-base-300 p-4 rounded-box">
