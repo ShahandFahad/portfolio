@@ -7,7 +7,7 @@ export const Hero = () => {
         <div
             className="hero min-h-screen"
             style={{
-                backgroundImage: `url(/hero-bg-2.jpg)`,
+                backgroundImage: `url(/hero.png)`,
             }}>
 
             <div className="hero-overlay"></div>
