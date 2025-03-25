@@ -1,5 +1,5 @@
 import { CircleUser } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface InfoBadgeProps {
     style: string;
@@ -30,7 +30,7 @@ export const Contact = () => {
         message: "Contact Form",
     });
 
-    const formHandler = (e) => {
+    const formHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         e.preventDefault();
 
         setContact((prev: EmailProps) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -115,7 +115,6 @@ export const Contact = () => {
                 <input onChange={formHandler} value={contact.from} name="from" required type="email" className="input bg-gray-700 text-white" placeholder="Email" />
                 <input onChange={formHandler} value={contact.subject} name="subject" required type="text" className="input bg-gray-700 text-white" placeholder="Subject" />
                 <textarea onChange={formHandler} value={contact.message} name="message" required className="textarea bg-gray-700 text-white" placeholder="Message"></textarea>
-
 
                 <button onClick={emailHandler} className="btn bg-green-500 mt-4">
                     {
