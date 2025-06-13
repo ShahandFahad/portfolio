@@ -1,23 +1,13 @@
 'use client'
-import { Contact } from "./components/Contact";
-import { Experience } from "./components/Experience";
-import { Projects } from "./components/Projects";
-import { SkillSet } from "./components/SkillSet";
-import { HomeLayout } from "./layouts/HomeLayout";
-import { DataProvider } from "./provider/DataProvider";
-import { ThemeProvider } from "./provider/ThemeProvider";
+
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
     return (
-        <DataProvider>
-            <ThemeProvider>
-                <HomeLayout>
-                    <SkillSet />
-                    <Experience />
-                    <Projects />
-                    <Contact />
-                </HomeLayout>
-            </ThemeProvider>
-        </DataProvider>
+        <main>
+            <Button>
+                Cooking v3.0.0
+            </Button>
+        </main>
     );
 };
