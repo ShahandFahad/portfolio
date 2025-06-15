@@ -19,7 +19,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.18.0",
     "lucide-react": "^0.482.0",
-    "motion": "^12.18.0",
+    "motion": "^12.18.1",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

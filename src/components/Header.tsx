@@ -35,7 +35,7 @@ export const Header = () => {
         <header className="border sticky top-0 z-50 backdrop-blur border-none py-5 md:px-4">
             <nav className="container mx-auto px-2 sm:px-4 lg:px-8 flex items-center justify-between h-16 border-slate-900 border shadow-xl border-gray-800">
 
-                <div className="flex items-center ml-5">
+                <div className="flex items-center">
                     <TypographyH1 text="Shah Fahad" styles="lg:text-4xl md:text-2xl text-1xl  text-orange-500" />
                 </div>
 
@@ -55,7 +55,7 @@ export const Header = () => {
             </nav>
 
             {/* Sidebar */}
-            <div className={`${sidebar} absolute bg-black text-white w-56 min-h-screen overflow-y-auto transition-transform transform  ease-in-out duration-300`}
+            <div className={`${sidebar} absolute bg-gradient-to-r from-black via-slate-950 to-slate-900 md:to-black text-white w-56 min-h-screen overflow-y-auto transition-transform transform  ease-in-out duration-300`}
                 id="sidebar">
                 {/* Sidebar Content */}
                 <MenuBarContent style="p-4 flex flex-col space-y-6" />
