@@ -1,5 +1,6 @@
 'use client'
 
+import { AboutSection } from "@/components/AboutSection";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { motion, useAnimation } from "framer-motion";
@@ -32,7 +33,7 @@ export const AnimatedBackground = () => {
         />
     );
 };
-
+// TODO: Use this for project card bg: from-black via-pink-950 to-pink-800
 export default function Home() {
     return (
         <div className="min-h-screen bg-gradient-to-r from-black via-slate-900 to-black text-white font-sans relative overflow-hidden">
@@ -44,6 +45,7 @@ export default function Home() {
                 <main className="">
                     {/*Sections*/}
                     <HeroSection />
+                    <AboutSection />
                 </main>
 
                 {/*Footer*/}
