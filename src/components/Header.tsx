@@ -76,7 +76,7 @@ type MenuBarTypes = {
 const MenuBarContent = ({ style }: MenuBarTypes) => {
     return (
         <div className={style}>
-            <Link href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+            <Link href="#about" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">01.</span> About
             </Link>
 
