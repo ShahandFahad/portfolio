@@ -3,6 +3,7 @@
 import { AboutSection } from "@/components/AboutSection";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { ProjectSection } from "@/components/ProjectSection";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
@@ -46,6 +47,11 @@ export default function Home() {
                     {/*Sections*/}
                     <HeroSection />
                     <AboutSection />
+
+                    {/* TODO: Put Experience Section Here */}
+                    {/* <ExperienceSection /> */}
+
+                    <ProjectSection />
                 </main>
 
                 {/*Footer*/}

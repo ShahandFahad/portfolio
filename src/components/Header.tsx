@@ -84,7 +84,7 @@ const MenuBarContent = ({ style }: MenuBarTypes) => {
                 <span className="text-orange-500">02.</span> Experience
             </Link>
 
-            <Link href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+            <Link href="#projects" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">03.</span> Work
             </Link>
 
