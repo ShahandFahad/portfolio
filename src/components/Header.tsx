@@ -18,7 +18,6 @@ import { useState } from "react";
 export const Header = () => {
     const [sidebar, setSidebar] = useState('-translate-x-full');
 
-
     // add and remove '-translate-x-full' class accordingly
     const handleSidebar = () => {
 
@@ -74,13 +73,18 @@ type MenuBarTypes = {
 
 // Content of sidebar and navbar
 const MenuBarContent = ({ style }: MenuBarTypes) => {
+
+    const versionAlert = () => {
+        alert("🚧 Under Work 🚀 | Part of v3.0.0 Update! 🔧✨");
+    }
+
     return (
         <div className={style}>
             <Link href="#about" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">01.</span> About
             </Link>
 
-            <Link href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+            <Link onClick={() => versionAlert()} href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">02.</span> Experience
             </Link>
 
@@ -88,11 +92,11 @@ const MenuBarContent = ({ style }: MenuBarTypes) => {
                 <span className="text-orange-500">03.</span> Work
             </Link>
 
-            <Link href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+            <Link onClick={() => versionAlert()} href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">04.</span> Contact
             </Link>
 
-            <Button className="bg-black text-orange-500 rounded border border-orange-900 outline hover:border-orange-500 hover:cursor-pointer transition-all duration-300 ease-in-out">
+            <Button onClick={() => versionAlert()} className="bg-black text-orange-500 rounded border border-orange-900 outline hover:border-orange-500 hover:cursor-pointer transition-all duration-300 ease-in-out">
                 Resume
             </Button>
         </div>
