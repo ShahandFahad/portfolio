@@ -1,28 +1,18 @@
 import { Github } from "lucide-react";
-import { useData } from "../hooks/useData";
-
+import Link from "next/link";
 export const Footer = () => {
-    const data = useData();
 
     return (
-        <footer className="footer footer-horizontal footer-center text-base-content rounded p-10">
-            <nav className="grid grid-flow-col gap-4">
-                <a className="link link-hover" href="#skills">Skills</a>
-                <a className="link link-hover" href="#experience">Experience</a>
-                <a className="link link-hover" href="#projects">Projects</a>
-                <a className="link link-hover" href="#contact">Contact</a>
-            </nav>
-            <nav>
-                <div className="grid grid-flow-col gap-4">
-                    <a target="_blank" href={data.sections.otherlinks.gitprojects.link}>
-                        <Github fill="white" />
-                    </a>
-                </div>
-            </nav>
-            <aside>
-                {/* <p>Copyright © {new Date().getFullYear()} - All right reserved by Shah Fahad</p> */}
-                <p className="text-lg text-red-500">{data.footer}</p>
-            </aside>
+        <footer className="container mx-auto text-sm text-center leading-7 transition-all duration-400 ease-in-out py-6">
+            <Link
+                className="flex flex-col justify-center items-center gap-2 hover:text-orange-500"
+                href="https://github.com/ShahandFahad/portfolio"
+            >
+                <span>
+                    Designed & Built by Shah Fahad
+                </span>
+                <Github strokeWidth={1} />
+            </Link>
         </footer>
     );
 };

@@ -92,7 +92,7 @@ const MenuBarContent = ({ style }: MenuBarTypes) => {
                 <span className="text-orange-500">03.</span> Work
             </Link>
 
-            <Link onClick={() => versionAlert()} href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+            <Link href="#contact" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
                 <span className="text-orange-500">04.</span> Contact
             </Link>
 

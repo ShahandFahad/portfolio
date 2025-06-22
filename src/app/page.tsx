@@ -1,14 +1,17 @@
 'use client'
 
 import { AboutSection } from "@/components/AboutSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectSection } from "@/components/ProjectSection";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { Toaster } from "sonner";
 
 // Small 1px dots in the background
-export const AnimatedBackground = () => {
+const AnimatedBackground = () => {
     const controls = useAnimation();
 
     useEffect(() => {
@@ -44,6 +47,8 @@ export default function Home() {
                 <Header />
 
                 <main className="">
+                    <Toaster />
+
                     {/*Sections*/}
                     <HeroSection />
                     <AboutSection />
@@ -52,9 +57,11 @@ export default function Home() {
                     {/* <ExperienceSection /> */}
 
                     <ProjectSection />
+                    <ContactSection />
                 </main>
 
                 {/*Footer*/}
+                <Footer />
             </div>
         </div>
     );

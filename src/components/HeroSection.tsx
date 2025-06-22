@@ -2,11 +2,9 @@ import { CenteredContentWrapper } from "@/layouts/CenteredContentWrapper";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { TypographyH1 } from "./ui/TypographyH1";
 import { TypographyP } from "./ui/TypographyP";
+import Link from "next/link";
 
 export const HeroSection = () => {
-    const versionAlert = () => {
-        alert("🚧 Under Work 🚀 | Part of v3.0.0 Update! 🔧✨");
-    }
     return (
         <CenteredContentWrapper>
             <BackgroundBeamsWithCollision>
@@ -39,12 +37,14 @@ export const HeroSection = () => {
                     </span>
 
                     <div className="">
-                        <button onClick={() => versionAlert()} className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-16 py-5 text-sm font-medium text-white backdrop-blur-3xl">
-                                {"Let's Connect"}
-                            </span>
-                        </button>
+                        <Link href="#contact">
+                            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-16 py-5 text-sm font-medium text-white backdrop-blur-3xl">
+                                    {"Let's Connect"}
+                                </span>
+                            </button>
+                        </Link>
                     </div>
 
                 </div>
