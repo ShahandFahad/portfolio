@@ -1,3 +1,4 @@
+/*
 import { useData } from "../hooks/useData";
 import { GridLayout } from "../layouts/GridLayout";
 import { Card } from "./Card";
@@ -26,3 +27,4 @@ export const Projects = () => {
         </div>
     );
 };
+*/

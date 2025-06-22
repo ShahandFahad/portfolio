@@ -1,3 +1,4 @@
+/*
 import { useData } from "../hooks/useData";
 
 export const Hero = () => {
@@ -26,3 +27,4 @@ export const Hero = () => {
         </div>
     );
 };
+*/

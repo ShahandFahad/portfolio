@@ -1,3 +1,4 @@
+/*
 import { useData } from "../hooks/useData";
 import { Title } from "./Title";
 
@@ -41,3 +42,4 @@ export const Experience = () => {
         </div>
     );
 }
+*/

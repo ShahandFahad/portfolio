@@ -1,3 +1,4 @@
+/*
 import { useTheme } from "../hooks/useTheme";
 
 export const ThemeController = () => {
@@ -42,3 +43,4 @@ export const ThemeController = () => {
         </button>
     );
 };
+*/
