@@ -28,7 +28,7 @@ const projects = [
         icon: <Folder className="h-8 w-8 text-orange-500" />,
         title: "E-Drawer",
         description:
-            "Developed a real-time chat server using Socket.IO and Node.js for instant bi-directional client communication. Designed scalable, modular event handling for socket events including connect, disconnect, messaging, and private chat management.",
+            "Developed a real-time chat server using Socket.IO and Node.js for instant bi-directional client communication. Designed scalable, modular event handling for socket events including connect, disconnect, messaging, and private chat.",
         tech: ["Node.js", "TypeScript", "Express.js", "Socket.IO"],
         preview: "https://github.com/ShahandFahad",
         repo: "https://github.com/ShahandFahad",
@@ -164,9 +164,9 @@ export const ProjectSection = () => {
                                 </h3>
                                 <TypographyP
                                     text={project.description}
-                                    styles="text-slate-200 h-44"
+                                    styles="text-slate-200 xl:h-44 lg:h-68 md:h-78 h-auto"
                                 />
-                                <div className="text-slate-400 flex gap-2 mt-4">
+                                <div className="text-slate-400 flex flex-wrap gap-2 mt-4">
                                     {
                                         project.tech.map((t, index) => (
                                             <span key={index} className="text-sm">{t}</span>
