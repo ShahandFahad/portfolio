@@ -2,6 +2,7 @@
 
 import { AboutSection } from "@/components/AboutSection";
 import { ContactSection } from "@/components/ContactSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
@@ -37,30 +38,27 @@ const AnimatedBackground = () => {
         />
     );
 };
-// TODO: Use this for project card bg: from-black via-pink-950 to-pink-800
+// Sometime Try: Use this for project card bg: from-black via-pink-950 to-pink-800
 export default function Home() {
     return (
         <div className="min-h-screen bg-gradient-to-r from-black via-slate-900 to-black text-white font-sans relative overflow-hidden">
             <AnimatedBackground />
             <div className="relative z-10">
-                {/*Header*/}
                 <Header />
 
                 <main className="">
                     <Toaster />
 
-                    {/*Sections*/}
+                    {/* Site Sections */}
+
                     <HeroSection />
                     <AboutSection />
-
-                    {/* TODO: Put Experience Section Here */}
-                    {/* <ExperienceSection /> */}
-
+                    <ExperienceSection />
                     <ProjectSection />
                     <ContactSection />
+
                 </main>
 
-                {/*Footer*/}
                 <Footer />
             </div>
         </div>
