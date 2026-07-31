@@ -19,7 +19,7 @@ export const AboutSection = ({ data: about }: { data: AboutData }) => {
 
                 <div className="">
                     <div className="py-3 flex items-center after:flex-1 after:border-t after:border-slate-700 md:after:ms-6 after:ms-4">
-                        <span className="block font-mono text-orange-500 text-left text-2xl" >
+                        <span className="block font-mono text-neon-cyan text-left text-2xl" >
                             {about.sectionNumber}{" "}
                             <TypographyH2 text={about.title} styles="inline text-slate-200 text-left" />
                         </span>

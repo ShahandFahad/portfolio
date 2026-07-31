@@ -14,6 +14,9 @@ html {
 
 @theme inline {
     --font-mono: var(--font-mono);
+    --color-neon-cyan: #00f0ff;
+    --color-neon-magenta: #ff2ea6;
+    --color-neon-violet: #8f5bff;
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -143,5 +146,72 @@ html {
 
 .animate-blink {
     animation: blink 1s step-end infinite;
+}
+
+@layer utilities {
+    .glow-border-cyan {
+        border-color: color-mix(in oklch, var(--color-neon-cyan) 45%, transparent);
+        box-shadow: 0 0 12px 0 color-mix(in oklch, var(--color-neon-cyan) 25%, transparent);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glow-border-cyan:hover {
+        border-color: color-mix(in oklch, var(--color-neon-cyan) 80%, transparent);
+        box-shadow: 0 0 24px 2px color-mix(in oklch, var(--color-neon-cyan) 45%, transparent);
+    }
+
+    .glow-border-magenta {
+        border-color: color-mix(in oklch, var(--color-neon-magenta) 45%, transparent);
+        box-shadow: 0 0 12px 0 color-mix(in oklch, var(--color-neon-magenta) 25%, transparent);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glow-border-magenta:hover {
+        border-color: color-mix(in oklch, var(--color-neon-magenta) 80%, transparent);
+        box-shadow: 0 0 24px 2px color-mix(in oklch, var(--color-neon-magenta) 45%, transparent);
+    }
+
+    .text-glow-cyan {
+        text-shadow: 0 0 8px color-mix(in oklch, var(--color-neon-cyan) 70%, transparent);
+    }
+
+    .text-glow-magenta {
+        text-shadow: 0 0 8px color-mix(in oklch, var(--color-neon-magenta) 70%, transparent);
+    }
+}
+
+@keyframes scanline-sweep {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.scanlines {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 240, 255, 0.05) 0px,
+        rgba(0, 240, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+}
+
+.scanline-sweep {
+    animation: scanline-sweep 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-blink,
+    .scanline-sweep {
+        animation: none !important;
+    }
+
+    .glow-border-cyan,
+    .glow-border-magenta {
+        transition: none !important;
+    }
 }
 

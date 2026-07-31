@@ -23,7 +23,7 @@ export const AnimatedBackground = () => {
         <motion.div
             className="absolute inset-0 z-0"
             style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)`,
+                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 240, 255, 0.12) 1px, transparent 0)`,
                 backgroundSize: "100px 100px",
             }}
             animate={controls}

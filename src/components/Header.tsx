@@ -42,7 +42,7 @@ export const Header = () => {
             <nav className="container mx-auto px-2 sm:px-4 lg:px-8 flex items-center justify-between h-16 border-slate-900 border shadow-xl border-gray-800">
 
                 <div className="flex items-center">
-                    <TypographyH1 text={header.logoText} styles="lg:text-4xl md:text-2xl text-1xl  text-orange-500" />
+                    <TypographyH1 text={header.logoText} styles="lg:text-4xl md:text-2xl text-1xl  text-neon-cyan text-glow-cyan" />
                 </div>
 
                 {/* Navbar Content */}
@@ -93,9 +93,9 @@ const MenuBarContent = ({ style }: MenuBarTypes) => {
                     key={index}
                     onClick={link.alertMsg ? () => alert(link.alertMsg) : undefined}
                     href={link.href}
-                    className="hover:text-orange-500 transition-all duration-300 ease-in-out"
+                    className="hover:text-neon-cyan transition-all duration-300 ease-in-out"
                 >
-                    {link.number && <span className="font-mono text-orange-500">{link.number}</span>} {link.label}
+                    {link.number && <span className="font-mono text-neon-cyan">{link.number}</span>} {link.label}
                 </Link>
             ))}
 
@@ -113,7 +113,7 @@ const MenuBarContent = ({ style }: MenuBarTypes) => {
 
             <Button
                 onClick={() => alert(header.resumeAlertMsg)}
-                className="bg-black text-orange-500 rounded border border-orange-900 outline hover:border-orange-500 hover:cursor-pointer transition-all duration-300 ease-in-out"
+                className="bg-black text-neon-cyan rounded border border-neon-cyan/30 outline hover:border-neon-cyan hover:cursor-pointer transition-all duration-300 ease-in-out"
             >
                 {header.resumeText}
             </Button>

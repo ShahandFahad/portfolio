@@ -24,7 +24,7 @@ export const ProjectSection = ({ data: projects }: { data: ProjectsData }) => {
             >
 
                 <div className="py-3 flex items-center after:flex-1 after:border-t after:border-slate-700 md:after:ms-6 after:ms-4">
-                    <span className="block font-mono text-orange-500 text-left text-2xl" >
+                    <span className="block font-mono text-neon-cyan text-left text-2xl" >
                         {projects.sectionNumber}{" "}
                         <TypographyH2 text={projects.title} styles="inline text-slate-200 text-left" />
                     </span>
@@ -42,7 +42,7 @@ export const ProjectSection = ({ data: projects }: { data: ProjectsData }) => {
                         projects.list.map((project, index) => (
                              <motion.div
                                 key={index}
-                                className="text-slate-200 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 hover:cursor-pointer rounded shadow-lg p-6 transition-colors border border-slate-800/60 hover:border-slate-700/80"
+                                className="text-slate-200 bg-black/40 backdrop-blur-md hover:cursor-pointer rounded shadow-lg p-6 border glow-border-cyan"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 whileHover={{ y: -6, scale: 1.02 }}
@@ -50,22 +50,22 @@ export const ProjectSection = ({ data: projects }: { data: ProjectsData }) => {
                             >
                                 <div className="flex justify-between items-start">
                                     <div className="mb-4 flex items-center gap-2">
-                                        <Folder className="h-8 w-8 text-orange-500" />
+                                        <Folder className="h-8 w-8 text-neon-cyan" />
                                         <span className="font-mono text-xs text-slate-600">
                                             PROJECT_{String(index + 1).padStart(2, "0")}
                                         </span>
                                     </div>
                                     <div className="mb-4 flex gap-2">
-                                        <Link target="_blank" href={project.repo ?? "https://github.com/ShahandFahad"} className="bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded p-1">
-                                            <Github className="text-slate-200 hover:text-orange-500 transition-colors" />
+                                        <Link target="_blank" href={project.repo ?? "https://github.com/ShahandFahad"} className="bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan rounded p-1">
+                                            <Github className="text-slate-200 hover:text-neon-cyan transition-colors" />
                                         </Link>
-                                        <Link target="_blank" href={project.preview ?? "https://github.com/ShahandFahad"} className="bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded p-1">
-                                            <ExternalLink className="text-slate-200 hover:text-orange-500 transition-colors" />
+                                        <Link target="_blank" href={project.preview ?? "https://github.com/ShahandFahad"} className="bg-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan rounded p-1">
+                                            <ExternalLink className="text-slate-200 hover:text-neon-cyan transition-colors" />
                                         </Link>
                                     </div>
                                 </div>
                                 <h3 className="text-xl font-semibold mb-2">
-                                    <Link href={project.preview ?? "https://github.com/ShahandFahad"} className="hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded">
+                                    <Link href={project.preview ?? "https://github.com/ShahandFahad"} className="hover:text-neon-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan rounded">
                                         {project.title}
                                     </Link>
                                 </h3>

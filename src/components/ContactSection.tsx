@@ -28,12 +28,12 @@ const socialIconFor = (label: string) => SOCIAL_ICONS[label.toLowerCase()] ?? Gl
 export const ContactSection = ({ data: contact }: { data: ContactData }) => {
     return (
         <CenteredContentWrapper>
-            <Vortex>
+            <Vortex baseHue={190}>
                 <section
                     id="contact"
                     className="min-h-screen container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center items-center"
                 >
-                    <p className="text-center font-mono text-orange-500" >
+                    <p className="text-center font-mono text-neon-cyan text-glow-cyan" >
                         {contact.sectionNumber} {contact.subtitle}
                     </p>
                     <TypographyH1
@@ -56,7 +56,7 @@ export const ContactSection = ({ data: contact }: { data: ContactData }) => {
                                         href={social.url}
                                         target="_blank"
                                         aria-label={social.label}
-                                        className="text-slate-300 hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded p-1"
+                                        className="text-slate-300 hover:text-neon-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan rounded p-1"
                                     >
                                         <Icon />
                                     </Link>

@@ -4,6 +4,7 @@ import { TypographyH1 } from "./ui/TypographyH1";
 import { TypographyP } from "./ui/TypographyP";
 import { TerminalPrompt } from "./ui/TerminalPrompt";
 import { StatTile } from "./ui/StatTile";
+import { ScanlineOverlay } from "./ui/ScanlineOverlay";
 import Link from "next/link";
 import { HeroData } from "@/data/portfolioData";
 
@@ -18,10 +19,11 @@ export const HeroSection = ({ data: hero }: { data: HeroData }) => {
     return (
         <CenteredContentWrapper>
             <BackgroundBeamsWithCollision>
+                <ScanlineOverlay />
                 <div className="w-5/5 mt-0 flex flex-col justify-center gap-4">
                     <TerminalPrompt
                         prefix="$"
-                        styles="text-orange-500 md:text-lg text-md"
+                        styles="text-neon-cyan md:text-lg text-md"
                     >
                         {hero.greeting}
                     </TerminalPrompt>
@@ -63,8 +65,8 @@ export const HeroSection = ({ data: hero }: { data: HeroData }) => {
 
                     <div className="">
                         <Link href="#contact" className="focus:outline-none rounded-full">
-                            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all active:scale-95 duration-200">
-                                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffedd5_0%,#ea580c_50%,#ffedd5_100%)]" />
+                            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-neon-cyan focus:ring-offset-2 focus:ring-offset-slate-900 transition-all active:scale-95 duration-200">
+                                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00f0ff_0%,#ff2ea6_50%,#00f0ff_100%)]" />
                                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-16 py-5 text-sm font-medium text-white backdrop-blur-3xl hover:bg-slate-900/90 transition-colors">
                                     {hero.ctaText}
                                 </span>

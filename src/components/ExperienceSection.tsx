@@ -25,7 +25,7 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
 
                 <div className="">
                     <div className="py-3 flex items-center after:flex-1 after:border-t after:border-slate-700 md:after:ms-6 after:ms-4">
-                        <span className="block font-mono text-orange-500 text-left text-2xl" >
+                        <span className="block font-mono text-neon-cyan text-left text-2xl" >
                             {experience.sectionNumber}{" "}
                             <TypographyH2 text={experience.title} styles="inline text-slate-200 text-left" />
                         </span>
@@ -39,9 +39,9 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                     key={index}
                                     role="tab"
                                     aria-selected={activeIndex === index}
-                                    className={`text-left p-4 cursor-pointer border-l-2 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 hover:bg-slate-800/40 text-sm whitespace-nowrap ${
+                                    className={`text-left p-4 cursor-pointer border-l-2 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan hover:bg-slate-800/40 text-sm whitespace-nowrap ${
                                         activeIndex === index
-                                            ? "border-l-orange-500 bg-slate-800 text-orange-500 font-semibold"
+                                            ? "border-l-neon-cyan bg-slate-800 text-neon-cyan text-glow-cyan font-semibold"
                                             : "border-l-transparent text-slate-400 hover:text-slate-200"
                                     }`}
                                     onClick={() => setActiveIndex(index)}
@@ -56,7 +56,7 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                 <div>
                                     <TypographyH2 text={content.title} styles="text-lg font-bold text-slate-100" />
                                     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 font-mono text-sm">
-                                        <span className="flex items-center gap-1.5 text-orange-500">
+                                        <span className="flex items-center gap-1.5 text-neon-cyan">
                                             <Calendar className="shrink-0" width="14" height="14" />
                                             {content.duration}
                                         </span>
@@ -71,7 +71,7 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                 <div className="space-y-3 mt-4">
                                     {content.description.map((item, index) => (
                                         <div className="flex items-start gap-3" key={index}>
-                                            <SendHorizonal className="text-orange-500 mt-1.5 shrink-0" width="8" />
+                                            <SendHorizonal className="text-neon-cyan mt-1.5 shrink-0" width="8" />
                                             <TypographyP text={item} styles="inline pl-0 text-slate-300 text-sm md:text-base leading-relaxed" />
                                         </div>
                                     ))}

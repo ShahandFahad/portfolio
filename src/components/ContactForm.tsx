@@ -72,7 +72,7 @@ export function ContactForm() {
                 // Success Toast
                 toast("Email Status", {
                     description: (
-                        <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-pink-950 to-pink-800 p-4">
+                        <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-fuchsia-950 to-fuchsia-800 p-4">
                             <code className="text-white">Email Successfully Sent!</code>
                         </pre>
                     ),
@@ -87,7 +87,7 @@ export function ContactForm() {
 
             toast("Email Status", {
                 description: (
-                    <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-pink-950 to-pink-800 p-4">
+                    <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-fuchsia-950 to-fuchsia-800 p-4">
                         <code className="text-white">Email Sending Failed!</code>
                     </pre>
                 ),
@@ -144,7 +144,7 @@ export function ContactForm() {
                     )}
                 />
                 <Button
-                    className="p-5 bg-orange-600 hover:cursor-pointer hover:bg-orange-800"
+                    className="p-5 bg-neon-cyan text-black hover:cursor-pointer hover:bg-neon-magenta hover:text-black transition-colors"
                     type="submit">
                     Say Hello
                 </Button>

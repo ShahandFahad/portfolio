@@ -31,7 +31,7 @@ export default async function Home() {
         : portfolioData.projects;
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-black via-slate-900 to-black text-white font-sans relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-r from-black via-[#05050a] to-black text-white font-sans relative overflow-hidden">
             <AnimatedBackground />
             <div className="relative z-10">
                 <Header />

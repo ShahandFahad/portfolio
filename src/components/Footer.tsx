@@ -14,7 +14,7 @@ export const Footer = () => {
     return (
         <footer className="container mx-auto text-sm text-center leading-7 transition-all duration-400 ease-in-out py-6">
             <Link
-                className="flex flex-col justify-center items-center gap-2 text-slate-400 hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded"
+                className="flex flex-col justify-center items-center gap-2 text-slate-400 hover:text-neon-cyan transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-cyan rounded"
                 href={footer.githubLink}
                 target="_blank"
             >
