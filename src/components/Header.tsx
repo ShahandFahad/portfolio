@@ -1,9 +1,10 @@
-"useclient"
+"use client"
 import Link from "next/link";
 import { TypographyH1 } from "./ui/TypographyH1";
 import { Button } from "./ui/button";
 import { SidebarClose, SidebarOpen } from "lucide-react";
 import { useState } from "react";
+import { portfolioData } from "@/data/portfolioData";
 
 /*
   Header
@@ -15,8 +16,14 @@ import { useState } from "react";
   Resume
 */
 
+/**
+ * Header Component
+ * Renders the sticky top navigation bar with logo and sidebar toggle for mobile.
+ * Ingests configuration and links dynamically from `portfolioData.header`.
+ */
 export const Header = () => {
     const [sidebar, setSidebar] = useState('-translate-x-full');
+    const { header } = portfolioData;
 
     // add and remove '-translate-x-full' class accordingly
     const handleSidebar = () => {
@@ -35,7 +42,7 @@ export const Header = () => {
             <nav className="container mx-auto px-2 sm:px-4 lg:px-8 flex items-center justify-between h-16 border-slate-900 border shadow-xl border-gray-800">
 
                 <div className="flex items-center">
-                    <TypographyH1 text="Shah Fahad" styles="lg:text-4xl md:text-2xl text-1xl  text-orange-500" />
+                    <TypographyH1 text={header.logoText} styles="lg:text-4xl md:text-2xl text-1xl  text-orange-500" />
                 </div>
 
                 {/* Navbar Content */}
@@ -71,33 +78,44 @@ type MenuBarTypes = {
     // handleSidebar: () => void;
 };
 
-// Content of sidebar and navbar
+/**
+ * MenuBarContent Sub-component
+ * Renders the navigation list items and action buttons.
+ * Shares mapping logic between main navbar and sidebar overlays.
+ */
 const MenuBarContent = ({ style }: MenuBarTypes) => {
-
-    const versionAlert = () => {
-        alert("🚧 Under Work 🚀 | Part of v3.0.0 Update! 🔧✨");
-    }
+    const { header } = portfolioData;
 
     return (
         <div className={style}>
-            <Link href="#about" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-                <span className="text-orange-500">01.</span> About
-            </Link>
+            {header.links.map((link, index) => (
+                <Link
+                    key={index}
+                    onClick={link.alertMsg ? () => alert(link.alertMsg) : undefined}
+                    href={link.href}
+                    className="hover:text-orange-500 transition-all duration-300 ease-in-out"
+                >
+                    {link.number && <span className="font-mono text-orange-500">{link.number}</span>} {link.label}
+                </Link>
+            ))}
 
-            <Link onClick={() => versionAlert()} href="#" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-                <span className="text-orange-500">02.</span> Experience
-            </Link>
+            {header.statusText && (
+                <div className="flex items-center gap-2" aria-label={`Status: ${header.statusText}`}>
+                    <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    </span>
+                    <span className="font-mono text-xs uppercase tracking-wide text-slate-400">
+                        {header.statusText}
+                    </span>
+                </div>
+            )}
 
-            <Link href="#projects" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-                <span className="text-orange-500">03.</span> Work
-            </Link>
-
-            <Link href="#contact" className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-                <span className="text-orange-500">04.</span> Contact
-            </Link>
-
-            <Button onClick={() => versionAlert()} className="bg-black text-orange-500 rounded border border-orange-900 outline hover:border-orange-500 hover:cursor-pointer transition-all duration-300 ease-in-out">
-                Resume
+            <Button
+                onClick={() => alert(header.resumeAlertMsg)}
+                className="bg-black text-orange-500 rounded border border-orange-900 outline hover:border-orange-500 hover:cursor-pointer transition-all duration-300 ease-in-out"
+            >
+                {header.resumeText}
             </Button>
         </div>
     );

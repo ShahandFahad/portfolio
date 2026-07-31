@@ -13,6 +13,7 @@ html {
 ;
 
 @theme inline {
+    --font-mono: var(--font-mono);
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -132,5 +133,15 @@ html {
   body {
     @apply bg-background text-foreground;
     }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation: blink 1s step-end infinite;
 }
 

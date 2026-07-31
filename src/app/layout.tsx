@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google"
+import { Inter as FontSans, JetBrains_Mono as FontMono } from "next/font/google"
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
+import { portfolioData } from "@/data/portfolioData";
 
 const fontSans = FontSans({
     variable: "--font-sans",
   subsets: ["latin"],
 });
 
+const fontMono = FontMono({
+    variable: "--font-mono",
+    subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Fahad Portfolio",
-  description: "Cooked by Fahad",
+  title: `${portfolioData.hero.name} Portfolio`,
+  description: `Cooked by ${portfolioData.hero.name.split(" ")[1] || portfolioData.hero.name}`,
 };
 
 export default function RootLayout({
@@ -24,7 +30,8 @@ export default function RootLayout({
       <body
       className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          fontMono.variable
       )}
       >
         {children}
