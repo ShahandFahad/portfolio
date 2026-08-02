@@ -23,7 +23,7 @@ export function HangingScroll({
       {/* cord loop */}
       <div
         aria-hidden="true"
-        className="mx-auto h-4 w-4 rounded-t-full border-2 border-b-0 border-gold-leaf/50"
+        className="mx-auto h-4 w-4 rounded-t-full border-2 border-b-0 border-accent/50"
       />
 
       <ScrollFrame
@@ -37,8 +37,8 @@ export function HangingScroll({
 
       {/* weighted tassel */}
       <div aria-hidden="true" className="mx-auto flex w-px flex-col items-center">
-        <div className="h-5 w-px bg-gold-leaf/50" />
-        <div className="h-2 w-2 rounded-full bg-gold-leaf/50" />
+        <div className="h-5 w-px bg-accent/50" />
+        <div className="h-2 w-2 rounded-full bg-accent/50" />
       </div>
     </div>
   );

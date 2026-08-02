@@ -41,21 +41,11 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                         </span>
                     </div>
 
-                    {/*
-                      Everything inside ScrollFrame sits on a fixed-dark
-                      surface that does not follow the page theme (a mounted
-                      scroll doesn't change color with the room), so it uses
-                      fixed palette colors (text-washi-white, text-ink-grey,
-                      text-gold-leaf, TechChip's fixedDark) rather than the
-                      theme-adaptive tokens used everywhere else — those would
-                      resolve to near-black on light theme and vanish against
-                      this always-dark background.
-                    */}
                     <ScrollFrame className="mt-6">
                         <div className="flex md:flex-row flex-col">
 
                             <div
-                                className="flex overflow-x-auto border-b border-washi-white/10 bg-black/15 md:w-64 md:flex-none md:flex-col md:overflow-x-visible md:border-r md:border-b-0 md:py-2"
+                                className="flex overflow-x-auto border-b border-border bg-muted/40 md:w-64 md:flex-none md:flex-col md:overflow-x-visible md:border-r md:border-b-0 md:py-2"
                                 role="tablist"
                                 aria-label="Work Experience Tabs"
                                 aria-orientation="vertical"
@@ -68,26 +58,26 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                         aria-selected={activeIndex === index}
                                         aria-controls={`experience-panel-${index}`}
                                         tabIndex={activeIndex === index ? 0 : -1}
-                                        className={`group relative flex shrink-0 items-baseline gap-2 whitespace-nowrap px-4 py-5 text-left transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-leaf md:shrink ${
-                                            activeIndex === index ? "bg-sumi-ink-3" : "hover:bg-sumi-ink-3/50"
+                                        className={`group relative flex shrink-0 items-baseline gap-2 whitespace-nowrap px-4 py-5 text-left transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:shrink ${
+                                            activeIndex === index ? "bg-muted" : "hover:bg-muted/50"
                                         }`}
                                         onClick={() => setActiveIndex(index)}
                                     >
                                         {activeIndex === index && (
                                             <span
                                                 aria-hidden="true"
-                                                className="absolute inset-y-0 left-0 w-[3px] bg-torii-red"
+                                                className="absolute inset-y-0 left-0 w-[3px] bg-primary"
                                                 style={{ clipPath: "polygon(0 6px, 100% 0, 100% 100%, 0 calc(100% - 6px))" }}
                                             />
                                         )}
-                                        <span className={`font-mono text-xs ${activeIndex === index ? "text-torii-red" : "text-ink-grey/60"}`}>
+                                        <span className={`font-mono text-xs ${activeIndex === index ? "text-primary" : "text-muted-foreground/60"}`}>
                                             {String(index + 1).padStart(2, "0")}
                                         </span>
                                         <span className="flex flex-col gap-0.5">
-                                            <span className={`font-display text-sm ${activeIndex === index ? "text-gold-leaf font-semibold" : "text-ink-grey group-hover:text-washi-white"}`}>
+                                            <span className={`font-display text-sm ${activeIndex === index ? "text-accent font-semibold" : "text-muted-foreground group-hover:text-foreground"}`}>
                                                 {job.company}
                                             </span>
-                                            <span className="font-mono text-[11px] text-ink-grey/70">{job.duration}</span>
+                                            <span className="font-mono text-[11px] text-muted-foreground/70">{job.duration}</span>
                                         </span>
                                     </button>
                                 ))}
@@ -107,14 +97,14 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                         transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
                                     >
                                         <div>
-                                            <TypographyH2 text={content.title} styles="text-lg font-bold font-display text-washi-white" />
+                                            <TypographyH2 text={content.title} styles="text-lg font-bold font-display text-foreground" />
                                             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 font-mono text-sm">
-                                                <span className="flex items-center gap-1.5 text-gold-leaf">
+                                                <span className="flex items-center gap-1.5 text-accent">
                                                     <Calendar className="shrink-0" width="14" height="14" />
                                                     {content.duration}
                                                 </span>
                                                 {content.location && (
-                                                    <span className="flex items-center gap-1.5 text-ink-grey">
+                                                    <span className="flex items-center gap-1.5 text-muted-foreground">
                                                         <MapPin className="shrink-0" width="14" height="14" />
                                                         {content.location}
                                                     </span>
@@ -124,15 +114,15 @@ export const ExperienceSection = ({ data: experience }: { data: ExperienceData }
                                         <div className="space-y-3 mt-4">
                                             {content.description.map((item, index) => (
                                                 <div className="flex items-start gap-3" key={index}>
-                                                    <SendHorizonal className="mt-1 h-3.5 w-3.5 shrink-0 text-gold-leaf" aria-hidden="true" />
-                                                    <TypographyP text={item} styles="inline pl-0 text-washi-white/85 text-sm md:text-base leading-relaxed" />
+                                                    <SendHorizonal className="mt-1 h-3.5 w-3.5 shrink-0 text-accent" aria-hidden="true" />
+                                                    <TypographyP text={item} styles="inline pl-0 !mt-0 text-foreground/85 text-sm md:text-base leading-relaxed" />
                                                 </div>
                                             ))}
                                         </div>
                                         {content.tech.length > 0 && (
                                             <div className="flex flex-wrap gap-2 pt-2">
                                                 {content.tech.map((t, index) => (
-                                                    <TechChip key={index} label={t} fixedDark />
+                                                    <TechChip key={index} label={t} />
                                                 ))}
                                             </div>
                                         )}

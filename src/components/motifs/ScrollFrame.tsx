@@ -27,10 +27,10 @@ export function ScrollFrame({
         style={{ background: ROLLER_GRADIENT }}
       />
 
-      <div className="border-x-[3px] border-gold-leaf/70 bg-sumi-ink-2 shadow-2xl shadow-black/40">
-        <div className="h-1.5 bg-gradient-to-r from-gold-leaf/10 via-gold-leaf/70 to-gold-leaf/10" />
+      <div className="border-x-[3px] border-accent/70 bg-card shadow-2xl shadow-black/40">
+        <div className="h-1.5 bg-gradient-to-r from-accent/10 via-accent/70 to-accent/10" />
         {children}
-        <div className="h-1.5 bg-gradient-to-r from-gold-leaf/10 via-gold-leaf/70 to-gold-leaf/10" />
+        <div className="h-1.5 bg-gradient-to-r from-accent/10 via-accent/70 to-accent/10" />
       </div>
 
       <div
