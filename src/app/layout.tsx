@@ -1,18 +1,45 @@
 import type { Metadata } from "next";
-import { Inter as FontSans, JetBrains_Mono as FontMono } from "next/font/google"
+import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import { portfolioData } from "@/data/portfolioData";
 
-const fontSans = FontSans({
-    variable: "--font-sans",
-  subsets: ["latin"],
+const fontDisplay = localFont({
+  variable: "--font-shippori",
+  display: "swap",
+  src: [
+    { path: "./fonts/ShipporiMincho-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/ShipporiMincho-700.woff2", weight: "700", style: "normal" },
+  ],
 });
 
-const fontMono = FontMono({
-    variable: "--font-mono",
-    subsets: ["latin"],
+const fontBody = localFont({
+  variable: "--font-zen",
+  display: "swap",
+  src: [
+    { path: "./fonts/ZenKakuGothicNew-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/ZenKakuGothicNew-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/ZenKakuGothicNew-700.woff2", weight: "700", style: "normal" },
+  ],
+});
+
+const fontMono = localFont({
+  variable: "--font-jbmono",
+  display: "swap",
+  src: [{ path: "./fonts/JetBrainsMono.woff2", weight: "400 700", style: "normal" }],
+});
+
+// Dedicated family for the fixed kanji glyph set (侍技開発結) used by the
+// motif components. Kept separate from fontDisplay rather than added as a
+// same-weight src entry: next/font/local has no per-src unicode-range, so a
+// shared family risks the browser picking whichever face loads first for a
+// given glyph. A standalone family sidesteps that ambiguity entirely.
+const fontKanji = localFont({
+  variable: "--font-shippori-kanji",
+  display: "swap",
+  src: [{ path: "./fonts/ShipporiMincho-Kanji.woff2", weight: "700", style: "normal" }],
 });
 
 export const metadata: Metadata = {
@@ -26,15 +53,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
       className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontMono.variable
+          fontDisplay.variable,
+          fontBody.variable,
+          fontMono.variable,
+          fontKanji.variable
       )}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -37,5 +37,12 @@ export default defineType({
       title: 'Repository Link',
       type: 'url',
     }),
+    defineField({
+      name: 'challenges',
+      title: 'Critical Battles',
+      description: 'Notable technical hurdles overcome — shown in the case-study drawer.',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
   ],
 })

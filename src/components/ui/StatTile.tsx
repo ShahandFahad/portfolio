@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 type StatTileProps = {
     value: string;
@@ -9,16 +9,17 @@ type StatTileProps = {
 };
 
 export function StatTile({ value, label, delay = 0 }: StatTileProps) {
+    const reduceMotion = useReducedMotion();
     return (
         <motion.div
-            className="border-l-2 border-neon-cyan/40 pl-3"
+            className="border-l-2 border-accent/40 pl-3"
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeOut", delay }}
+            transition={{ duration: reduceMotion ? 0 : 0.3, ease: "easeOut", delay: reduceMotion ? 0 : delay }}
         >
-            <div className="text-2xl font-mono text-neon-cyan text-glow-cyan">{value}</div>
-            <div className="text-xs uppercase tracking-wide text-slate-400">{label}</div>
+            <div className="text-2xl font-mono text-accent">{value}</div>
+            <div className="text-xs uppercase tracking-wide text-muted-foreground">{label}</div>
         </motion.div>
     );
 }

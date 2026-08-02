@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectSection } from "@/components/ProjectSection";
+import { KatanaDivider } from "@/components/motifs/KatanaDivider";
 import { Toaster } from "sonner";
 import { portfolioData } from "@/data/portfolioData";
 import { getAboutContent, getContactInfo, getExperiences, getHero, getProjects } from "@/lib/cmsClient";
@@ -31,7 +32,7 @@ export default async function Home() {
         : portfolioData.projects;
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-black via-[#05050a] to-black text-white font-sans relative overflow-hidden">
+        <div className="min-h-screen bg-background text-foreground font-sans relative overflow-hidden">
             <AnimatedBackground />
             <div className="relative z-10">
                 <Header />
@@ -42,9 +43,21 @@ export default async function Home() {
                     {/* Site Sections */}
 
                     <HeroSection data={hero} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
                     <AboutSection data={about} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
                     <ExperienceSection data={experience} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
                     <ProjectSection data={projects} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
                     <ContactSection data={contact} />
 
                 </main>

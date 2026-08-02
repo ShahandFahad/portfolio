@@ -9,15 +9,12 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
-    FormLabel,
     FormMessage,
 } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "./ui/input"
-import { throws } from "assert"
 
 const FormSchema = z.object({
     email: z.string()
@@ -83,7 +80,7 @@ export function ContactForm() {
             }
 
 
-        } catch (error) {
+        } catch {
 
             toast("Email Status", {
                 description: (
@@ -144,7 +141,7 @@ export function ContactForm() {
                     )}
                 />
                 <Button
-                    className="p-5 bg-neon-cyan text-black hover:cursor-pointer hover:bg-neon-magenta hover:text-black transition-colors"
+                    className="p-5 bg-accent text-accent-foreground hover:cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
                     type="submit">
                     Say Hello
                 </Button>

@@ -22,7 +22,8 @@ export async function getProjects(): Promise<ProjectItem[]> {
     description,
     tech,
     preview,
-    repo
+    repo,
+    challenges
   }`
   return await client.fetch(query, {}, FETCH_OPTIONS)
 }

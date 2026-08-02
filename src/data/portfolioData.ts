@@ -82,6 +82,8 @@ export interface ProjectItem {
   tech: string[];
   preview?: string;
   repo?: string;
+  /** Notable technical hurdles overcome — rendered as "Critical Battles" in the Scroll case-study drawer. */
+  challenges?: string[];
 }
 
 /**
@@ -193,8 +195,8 @@ export const portfolioData: PortfolioData = {
       "CI/CD (GitHub Actions)",
       "RESTful APIs / WebSockets"
     ],
-    imageSrc: "/samurai.svg",
-    imageAlt: "Profile",
+    imageSrc: "/images/about-scroll.webp",
+    imageAlt: "Stylized illustration of a crouching samurai figure in a conical hat, holding a katana",
     education: [],
     certifications: [],
   },
@@ -255,6 +257,10 @@ export const portfolioData: PortfolioData = {
         tech: ["Node.js", "TypeScript", "React.js", "MongoDB", "Redis", "RabbitMQ", "Docker", "PM2", "Nginx", "Prometheus", "Grafana"],
         preview: "https://github.com/ShahandFahad",
         repo: "https://github.com/ShahandFahad",
+        challenges: [
+          "Kept payroll and attendance data consistent across concurrent multi-role writes without locking the whole system.",
+          "Tuned MongoDB aggregation pipelines and Redis caching so reporting stayed fast as historical data grew.",
+        ],
       },
       {
         title: "Multi-Threaded Media Processing API",
@@ -262,6 +268,10 @@ export const portfolioData: PortfolioData = {
         tech: ["Node.js", "TypeScript", "Express.js", "Worker Threads"],
         preview: "https://github.com/ShahandFahad/media-processor-worker-api.git",
         repo: "https://github.com/ShahandFahad/media-processor-worker-api.git",
+        challenges: [
+          "Kept the main event loop non-blocking under CPU-heavy image/video jobs by offloading work to Worker Threads.",
+          "Balanced worker pool sizing against memory limits so throughput scaled without exhausting the host.",
+        ],
       },
       {
         title: "Ignis - AI Chatbot",
@@ -269,6 +279,10 @@ export const portfolioData: PortfolioData = {
         tech: ["Node.js", "TypeScript", "OpenAI API", "MongoDB", "Docker"],
         preview: "https://github.com/ShahandFahad/ignis.git",
         repo: "https://github.com/ShahandFahad/ignis.git",
+        challenges: [
+          "Kept multi-turn conversation state consistent across requests without leaking context between users.",
+          "Handled OpenAI API latency and rate limits gracefully so the chat experience stayed responsive under load.",
+        ],
       },
       {
         title: "E-Drawer / SCECO",
@@ -276,6 +290,10 @@ export const portfolioData: PortfolioData = {
         tech: ["Next.js", "Socket.IO", "MongoDB", "Firebase", "JWT"],
         preview: "https://github.com/ShahandFahad",
         repo: "https://github.com/ShahandFahad",
+        challenges: [
+          "Kept Socket.IO connection state and REST data in sync across role-based access boundaries.",
+          "Integrated Firebase media handling without introducing a single point of failure in the request path.",
+        ],
       },
     ],
   },
@@ -299,9 +317,8 @@ export const portfolioData: PortfolioData = {
       },
       {
         label: "Experience",
-        href: "#",
+        href: "#experience",
         number: "02.",
-        alertMsg: "🚧 Under Work 🚀 | Part of v3.0.0 Update! 🔧✨",
       },
       {
         label: "Work",
