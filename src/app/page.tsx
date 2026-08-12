@@ -1,66 +1,67 @@
-'use client'
-
 import { AboutSection } from "@/components/AboutSection";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { ContactSection } from "@/components/ContactSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectSection } from "@/components/ProjectSection";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { KatanaDivider } from "@/components/motifs/KatanaDivider";
 import { Toaster } from "sonner";
+import { portfolioData } from "@/data/portfolioData";
+import { getAboutContent, getContactInfo, getExperiences, getHero, getProjects } from "@/lib/cmsClient";
 
-// Small 1px dots in the background
-const AnimatedBackground = () => {
-    const controls = useAnimation();
+// Sometime Try: Use this for project card bg: from-black via-pink-950 to-pink-800
+export default async function Home() {
+    const [heroData, aboutData, contactData, experienceJobs, projectList] = await Promise.all([
+        getHero(),
+        getAboutContent(),
+        getContactInfo(),
+        getExperiences(),
+        getProjects(),
+    ]);
 
-    useEffect(() => {
-        controls.start({
-            backgroundPosition: ["0px", "0px", "-200px", "-200px"],
-            transition: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 20,
-                ease: "linear",
-            },
-        });
-    }, [controls]);
+    const hero = heroData ?? portfolioData.hero;
+    const about = aboutData ?? portfolioData.about;
+    const contact = contactData ?? portfolioData.contact;
+    const experience = experienceJobs?.length
+        ? { ...portfolioData.experience, jobs: experienceJobs }
+        : portfolioData.experience;
+    const projects = projectList?.length
+        ? { ...portfolioData.projects, list: projectList }
+        : portfolioData.projects;
 
     return (
-        <motion.div
-            className="absolute inset-0 z-0"
-            style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)`,
-                backgroundSize: "100px 100px",
-            }}
-            animate={controls}
-        />
-    );
-};
-// TODO: Use this for project card bg: from-black via-pink-950 to-pink-800
-export default function Home() {
-    return (
-        <div className="min-h-screen bg-gradient-to-r from-black via-slate-900 to-black text-white font-sans relative overflow-hidden">
+        <div className="min-h-screen bg-background text-foreground font-sans relative overflow-hidden">
             <AnimatedBackground />
             <div className="relative z-10">
-                {/*Header*/}
                 <Header />
 
                 <main className="">
                     <Toaster />
 
-                    {/*Sections*/}
-                    <HeroSection />
-                    <AboutSection />
+                    {/* Site Sections */}
 
-                    {/* TODO: Put Experience Section Here */}
-                    {/* <ExperienceSection /> */}
+                    <HeroSection data={hero} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
+                    <AboutSection data={about} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
+                    <ExperienceSection data={experience} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
+                    <ProjectSection data={projects} />
+                    <div className="mx-auto w-full md:w-4/5 max-w-screen-xl px-4">
+                        <KatanaDivider />
+                    </div>
+                    <ContactSection data={contact} />
 
-                    <ProjectSection />
-                    <ContactSection />
                 </main>
 
-                {/*Footer*/}
                 <Footer />
             </div>
         </div>

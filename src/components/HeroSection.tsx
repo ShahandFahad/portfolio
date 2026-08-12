@@ -1,54 +1,117 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { CenteredContentWrapper } from "@/layouts/CenteredContentWrapper";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { TypographyH1 } from "./ui/TypographyH1";
 import { TypographyP } from "./ui/TypographyP";
-import Link from "next/link";
+import { StatTile } from "./ui/StatTile";
+import { KanjiWatermark } from "./motifs/KanjiWatermark";
+import { InkBleedReveal } from "./motifs/InkBleedReveal";
+import { HeroData } from "@/data/portfolioData";
 
-export const HeroSection = () => {
-    return (
-        <CenteredContentWrapper>
-            <BackgroundBeamsWithCollision>
-                <div className="w-5/5 mt-0 flex flex-col justify-center gap-4">
-                    <TypographyP
-                        text="Hi, my name is"
-                        styles="text-orange-500 md:text-lg text-md"
-                    />
+/**
+ * HeroSection Component — "The Dojo"
+ * Content is passed in via the `data` prop (resolved in `page.tsx` from Sanity,
+ * falling back to `portfolioData.hero`) to separate the copy/data layer from
+ * the UI presentation layer.
+ */
+export const HeroSection = ({ data: hero }: { data: HeroData }) => {
+  const reduceMotion = useReducedMotion();
 
-                    <TypographyH1
-                        text="Shah Fahad"
-                        styles="text-left md:text-6xl text-4xl"
-                    />
-                    <TypographyH1
-                        text="I build web systems powered by AI."
-                        styles="text-left text-slate-400 md:text-5xl text-xl"
-                    />
+  return (
+    <CenteredContentWrapper>
+      <section
+        id="hero"
+        className="relative flex min-h-screen flex-col justify-center gap-12 overflow-hidden py-24 md:flex-row md:items-center md:gap-10 md:py-16"
+      >
+        <KanjiWatermark
+          glyph="samurai"
+          className="absolute -top-16 -right-10 text-[16rem] md:-top-24 md:-right-16 md:text-[28rem]"
+        />
 
-                    {/* 
-                        text="I’m a software engineer specializing as a full-stack developer, with a strong focus on building reliable backend systems while continuously expanding my skills in AI engineering. I currently work as a full-stack developer, integrating AI technologies to build smarter applications."
-                    */}
-                    <TypographyP
-                        text="I’m a software engineer specializing as a full-stack developer, building full-stack systems, reliable backends, & integrating AI technologies to build smarter applications."
-                        styles="md:w-3/5 md:text-md"
-                    />
-                    <span
-                        className="-mt-4 md:w-3/5 md:text-md md:block hidden"
-                    >
-                        And continuously expanding my skills in AI engineering.
-                    </span>
+        {/*
+          One-shot slash reveal on load — not a persistent effect. `initial`
+          and the child structure below stay constant regardless of
+          `reduceMotion` on purpose: useReducedMotion() resolves synchronously
+          on the client but is always null during SSR, so branching the
+          initial style or conditionally mounting the blade streak on it
+          causes a server/client hydration mismatch. Only `transition`
+          (post-hydration timing, never part of the SSR'd markup) varies.
+        */}
+        <motion.div
+          className="relative z-10 flex flex-col gap-5 md:w-3/5"
+          initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" }}
+          animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          transition={{ duration: reduceMotion ? 0 : 0.85, ease: [0.65, 0, 0.35, 1] }}
+        >
+          <motion.span
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-y-6 left-0 z-20 w-[3px] bg-torii-red"
+            style={{ transformOrigin: "top" }}
+            initial={{ x: 0, scaleY: 0, opacity: 1 }}
+            animate={{ x: "110vw", scaleY: 1, opacity: [1, 1, 0] }}
+            transition={{ duration: reduceMotion ? 0 : 0.85, ease: [0.65, 0, 0.35, 1] }}
+          />
 
-                    <div className="">
-                        <Link href="#contact">
-                            <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-16 py-5 text-sm font-medium text-white backdrop-blur-3xl">
-                                    {"Let's Connect"}
-                                </span>
-                            </button>
-                        </Link>
-                    </div>
+          <p className="font-mono text-sm text-torii-red md:text-base">
+            <span aria-hidden="true" className="font-kanji">侍</span> {hero.greeting}
+          </p>
 
-                </div>
-            </BackgroundBeamsWithCollision>
-        </CenteredContentWrapper>
-    );
+          <TypographyH1
+            text={hero.name}
+            styles="text-left font-display font-bold leading-[1.05] md:text-7xl text-4xl text-foreground"
+          />
+          <TypographyH1
+            text={hero.subtitle}
+            styles="text-left font-display text-muted-foreground md:text-4xl text-xl"
+          />
+
+          <TypographyP
+            text={hero.description}
+            styles="md:w-4/5 text-foreground/85 md:text-base text-sm"
+          />
+
+          <span className="-mt-2 hidden font-mono text-sm text-muted-foreground md:block md:w-4/5">
+            {"// "}
+            {hero.extraSkillLine}
+          </span>
+
+          {hero.stats && hero.stats.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-6">
+              {hero.stats.map((stat, index) => (
+                <StatTile key={index} value={stat.value} label={stat.label} delay={index * 0.1} />
+              ))}
+            </div>
+          )}
+
+          <div className="mt-2">
+            <Link href="#contact">
+              <button className="inline-flex h-12 items-center justify-center rounded-sm border border-torii-red bg-primary px-10 text-sm font-medium tracking-wide text-primary-foreground transition-colors duration-200 hover:bg-torii-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98]">
+                {hero.ctaText}
+              </button>
+            </Link>
+          </div>
+        </motion.div>
+
+        <InkBleedReveal delay={0.3} className="relative z-10 md:w-2/5">
+          <figure className="relative">
+            <div className="relative aspect-[952/1400] w-full max-w-sm overflow-hidden border border-gold-leaf/40 md:max-w-none">
+              <Image
+                src="/images/samurai-hero.webp"
+                alt="Stylized illustration of a samurai in a conical hat drawing a katana in front of a large red sun"
+                fill
+                sizes="(min-width: 768px) 40vw, 90vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi-ink via-transparent to-transparent" />
+              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-sumi-ink to-transparent md:block hidden" />
+            </div>
+          </figure>
+        </InkBleedReveal>
+      </section>
+    </CenteredContentWrapper>
+  );
 };

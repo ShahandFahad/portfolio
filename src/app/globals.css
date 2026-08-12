@@ -8,11 +8,30 @@
 
 html {
     scroll-behavior: smooth;
-};
+}
 
-;
-
+/*
+ * Bushido design system — see the Sprint 1 plan for full rationale.
+ * Contrast figures below are measured against the token they are actually
+ * laid on, targeting the 7:1 AAA bar this repo's a11y conventions already set.
+ */
 @theme inline {
+    --font-sans: var(--font-zen), "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", sans-serif;
+    --font-display: var(--font-shippori), "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+    --font-mono: var(--font-jbmono), ui-monospace, "SFMono-Regular", monospace;
+    --font-kanji: var(--font-shippori-kanji), "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+
+    --color-sumi-ink: #121214;
+    --color-sumi-ink-2: #1b1a1e;
+    --color-sumi-ink-3: #201f24;
+    --color-washi-white: #f1ede4;
+    --color-ink-grey: #afaca4;
+    --color-torii-red: #c6423a;
+    --color-torii-red-deep: #b23830;
+    --color-gold-leaf: #c79a46;
+    --color-sakura-pink: #e9a9b8;
+    --color-washi-paper: #f6f2e9;
+
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -32,6 +51,7 @@ html {
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
     --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
@@ -48,82 +68,106 @@ html {
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
-};
+}
 
-;
-
+/* Dark — Sumi-e Ink (default identity) */
 :root {
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.129 0.042 264.695);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.129 0.042 264.695);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.129 0.042 264.695);
-    --primary: oklch(0.208 0.042 265.755);
-    --primary-foreground: oklch(0.984 0.003 247.858);
-    --secondary: oklch(0.968 0.007 247.896);
-    --secondary-foreground: oklch(0.208 0.042 265.755);
-    --muted: oklch(0.968 0.007 247.896);
-    --muted-foreground: oklch(0.554 0.046 257.417);
-    --accent: oklch(0.968 0.007 247.896);
-    --accent-foreground: oklch(0.208 0.042 265.755);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.929 0.013 255.508);
-    --input: oklch(0.929 0.013 255.508);
-    --ring: oklch(0.704 0.04 256.788);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.984 0.003 247.858);
-    --sidebar-foreground: oklch(0.129 0.042 264.695);
-    --sidebar-primary: oklch(0.208 0.042 265.755);
-    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-accent: oklch(0.968 0.007 247.896);
-    --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-    --sidebar-border: oklch(0.929 0.013 255.508);
-    --sidebar-ring: oklch(0.704 0.04 256.788);
-};
+    --radius: 0.25rem;
 
-;
+    --background: var(--color-sumi-ink);
+    --foreground: var(--color-washi-white); /* 16.0:1 on background */
+    --card: var(--color-sumi-ink-2);
+    --card-foreground: var(--color-washi-white);
+    --popover: var(--color-sumi-ink-3);
+    --popover-foreground: var(--color-washi-white);
+    --primary: var(--color-torii-red-deep); /* 5.1:1 with washi-white text */
+    --primary-foreground: var(--color-washi-white);
+    --secondary: var(--color-sumi-ink-3);
+    --secondary-foreground: var(--color-washi-white);
+    --muted: var(--color-sumi-ink-2);
+    --muted-foreground: var(--color-ink-grey); /* 8.3:1 on background — captions/secondary text */
+    --accent: var(--color-gold-leaf); /* 7.3:1 with sumi-ink text */
+    --accent-foreground: var(--color-sumi-ink);
+    --destructive: var(--color-torii-red-deep);
+    --destructive-foreground: var(--color-washi-white);
+    --border: rgba(241, 237, 228, 0.1);
+    --input: rgba(241, 237, 228, 0.14);
+    --ring: var(--color-gold-leaf);
+    --chart-1: var(--color-torii-red);
+    --chart-2: var(--color-gold-leaf);
+    --chart-3: var(--color-sakura-pink);
+    --chart-4: var(--color-ink-grey);
+    --chart-5: var(--color-washi-white);
+    --sidebar: var(--color-sumi-ink-2);
+    --sidebar-foreground: var(--color-washi-white);
+    --sidebar-primary: var(--color-torii-red-deep);
+    --sidebar-primary-foreground: var(--color-washi-white);
+    --sidebar-accent: var(--color-sumi-ink-3);
+    --sidebar-accent-foreground: var(--color-washi-white);
+    --sidebar-border: rgba(241, 237, 228, 0.1);
+    --sidebar-ring: var(--color-gold-leaf);
+}
 
-.dark {
-    --background: oklch(0.129 0.042 264.695);
-    --foreground: oklch(0.984 0.003 247.858);
-    --card: oklch(0.208 0.042 265.755);
-    --card-foreground: oklch(0.984 0.003 247.858);
-    --popover: oklch(0.208 0.042 265.755);
-    --popover-foreground: oklch(0.984 0.003 247.858);
-    --primary: oklch(0.929 0.013 255.508);
-    --primary-foreground: oklch(0.208 0.042 265.755);
-    --secondary: oklch(0.279 0.041 260.031);
-    --secondary-foreground: oklch(0.984 0.003 247.858);
-    --muted: oklch(0.279 0.041 260.031);
-    --muted-foreground: oklch(0.704 0.04 256.788);
-    --accent: oklch(0.279 0.041 260.031);
-    --accent-foreground: oklch(0.984 0.003 247.858);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.551 0.027 264.364);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.208 0.042 265.755);
-    --sidebar-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-accent: oklch(0.279 0.041 260.031);
-    --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.551 0.027 264.364);
-};
+/* Light — Zen Garden Washi (available, not deferred to a v2) */
+:root[data-theme="light"],
+.light {
+    --background: var(--color-washi-paper);
+    --foreground: #1c1a17; /* 15.5:1 on background */
+    --card: #ffffff;
+    --card-foreground: #1c1a17;
+    --popover: #ffffff;
+    --popover-foreground: #1c1a17;
+    --primary: #a5432c; /* 5.5:1 on washi-paper as text, 5.6:1 with white fill text */
+    --primary-foreground: #f8f5ef;
+    --secondary: #efe9db;
+    --secondary-foreground: #1c1a17;
+    --muted: #efe9db;
+    --muted-foreground: #6b6559; /* captions/secondary only, not body */
+    --accent: #8a6526; /* 4.7:1 on washi-paper */
+    --accent-foreground: #f8f5ef;
+    --destructive: #a5432c;
+    --destructive-foreground: #f8f5ef;
+    --border: #e1d9c4;
+    --input: #ddd5c2;
+    --ring: #8a6526;
+    --chart-1: #a5432c;
+    --chart-2: #8a6526;
+    --chart-3: #c98194;
+    --chart-4: #6b6559;
+    --chart-5: #1c1a17;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #1c1a17;
+    --sidebar-primary: #a5432c;
+    --sidebar-primary-foreground: #f8f5ef;
+    --sidebar-accent: #efe9db;
+    --sidebar-accent-foreground: #1c1a17;
+    --sidebar-border: #e1d9c4;
+    --sidebar-ring: #8a6526;
+}
 
-;
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]):not(.dark) {
+        --background: var(--color-washi-paper);
+        --foreground: #1c1a17;
+        --card: #ffffff;
+        --card-foreground: #1c1a17;
+        --popover: #ffffff;
+        --popover-foreground: #1c1a17;
+        --primary: #a5432c;
+        --primary-foreground: #f8f5ef;
+        --secondary: #efe9db;
+        --secondary-foreground: #1c1a17;
+        --muted: #efe9db;
+        --muted-foreground: #6b6559;
+        --accent: #8a6526;
+        --accent-foreground: #f8f5ef;
+        --destructive: #a5432c;
+        --destructive-foreground: #f8f5ef;
+        --border: #e1d9c4;
+        --input: #ddd5c2;
+        --ring: #8a6526;
+    }
+}
 
 @layer base {
   * {
@@ -134,3 +178,42 @@ html {
     }
 }
 
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* Katana rule — a hairline with a single diagonal cut, the one recurring
+   divider motif. Deliberately not reused as generic card decoration. */
+.katana-rule {
+    height: 10px;
+    background: linear-gradient(var(--border), var(--border)) no-repeat center / 100% 1px;
+    clip-path: polygon(0 45%, 92% 45%, 100% 0%, 100% 55%, 8% 55%, 0 100%);
+    position: relative;
+}
+.katana-rule::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--color-torii-red), var(--color-torii-red)) no-repeat left center / 6% 1px;
+}
+
+@layer utilities {
+    .text-seal {
+        color: var(--color-torii-red);
+    }
+    .border-seal {
+        border-color: var(--color-torii-red);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-blink {
+        animation: none !important;
+    }
+}

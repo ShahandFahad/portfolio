@@ -9,15 +9,12 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
-    FormLabel,
     FormMessage,
 } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "./ui/input"
-import { throws } from "assert"
 
 const FormSchema = z.object({
     email: z.string()
@@ -72,7 +69,7 @@ export function ContactForm() {
                 // Success Toast
                 toast("Email Status", {
                     description: (
-                        <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-pink-950 to-pink-800 p-4">
+                        <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-fuchsia-950 to-fuchsia-800 p-4">
                             <code className="text-white">Email Successfully Sent!</code>
                         </pre>
                     ),
@@ -83,11 +80,11 @@ export function ContactForm() {
             }
 
 
-        } catch (error) {
+        } catch {
 
             toast("Email Status", {
                 description: (
-                    <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-pink-950 to-pink-800 p-4">
+                    <pre className="mt-2 w-[320px] rounded-md bg-gradient-to-r from-black via-fuchsia-950 to-fuchsia-800 p-4">
                         <code className="text-white">Email Sending Failed!</code>
                     </pre>
                 ),
@@ -144,7 +141,7 @@ export function ContactForm() {
                     )}
                 />
                 <Button
-                    className="p-5 bg-orange-600 hover:cursor-pointer hover:bg-orange-800"
+                    className="p-5 bg-accent text-accent-foreground hover:cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
                     type="submit">
                     Say Hello
                 </Button>
