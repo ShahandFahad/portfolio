@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="60" cy="60" r="60"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="120" height="120" fill="url(#bg)"/>
+    <path d="M18 124 C18 92, 38 80, 60 80 C82 80, 102 92, 102 124 Z" fill="#0f172a"/>
+    <path d="M50 80 L60 94 L70 80 Z" fill="#dbe7ff"/>
+    <rect x="53" y="64" width="14" height="16" rx="4" fill="#dbe7ff"/>
+    <circle cx="60" cy="50" r="20" fill="#dbe7ff"/>
+    <path d="M39 50 C38 33, 49 26, 61 26 C74 26, 83 34, 81 50 C78 41, 69 36, 58 37 C49 38, 43 43, 39 50 Z" fill="#0f172a"/>
+    <rect x="45" y="47" width="12" height="9" rx="3" fill="none" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="63" y="47" width="12" height="9" rx="3" fill="none" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="57" y1="51" x2="63" y2="51" stroke="#0f172a" stroke-width="2.2"/>
+    <path d="M54 62 Q60 66 66 62" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
